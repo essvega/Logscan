@@ -2,7 +2,7 @@
 Building a script to Scan logs from embedded devices looking for IP addresses, that they may be connecting to.
 
 ## Requirements:
-1- Install any distribution of Python from: https://www.python.org/downloads/
+1- Install any Python distribution from: https://www.python.org/downloads/
 
 
 ## To Execute:
