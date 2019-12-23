@@ -11,5 +11,8 @@ Building a script to Scan logs from embedded devices looking for IP addresses, t
          ***python read.py***
 
 ### To Do:
+  * Exclude from filtering Private IP addresses
+  * Exclude Bogon Ranges used in Local Networks without access to the public Internet
+  * Include IPv6 to be analyzed
   * Request information from an API (Geolocation of IP addresses) about the IPs found.
   * Show all these API addresses in a well conformed Front-end.
