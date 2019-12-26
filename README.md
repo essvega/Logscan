@@ -11,6 +11,10 @@ Building a script to Scan logs from embedded devices looking for IP addresses, t
          ***python read.py***
 
 ### To Do:
+  
+
+
+### Done: 
   * Exclude from filtering Private IP addresses
   * Exclude Bogon Ranges used in Local Networks without access to the public Internet
   * Include IPv6 to be analyzed
