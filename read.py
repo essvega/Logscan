@@ -1,9 +1,23 @@
 import re
-private = ["192.168", "172.16", "10"]
+import requests
+import json
+import ipinfo
+from IPy import IP
+
+access_token = input('Enter your token access:  ')
+handler = ipinfo.getHandler(access_token)
+
+
 list = ["0"]
 orderedlist = []
 latest = []
 print("Starting ... \nPlease do not close this window until we finish")
+
+def jprint(obj):
+    #Create a formatted string of the Python JSON object
+    text = json.dumps(obj, sort_keys=True, indent=4)
+    print(text)
+
 
 def organize():
     for j in list:
@@ -14,18 +28,23 @@ def removing():
     for z in orderedlist:
         if z not in latest:
             latest.append(z)
-
-def remoprivate():
-    for z in latest:
-        print("a")
-        
-        
-def reducing(input_string, starting, ending):
+          
+def letsdoit():
+    
     for i in latest:
-        if (i.find(input_string, starting, ending) != -1):
-            latest.remove(i)
-        else:
-            continue
+        ipe = IP(i)
+        if ipe.iptype() == "PUBLIC":
+            details = handler.getDetails(i)
+            if 'org' in details.all:
+               companies = details.org
+            else:
+               companies = "--NO DATA--"
+            print("IP Address=> " + i + "; Country=> " + details.country_name + "; Region=> " + details.region + "; Company=> " + companies)
+
+
+
+
+
 
 
 with open('log.txt') as f:
@@ -38,21 +57,20 @@ with open('log.txt') as f:
 
         
 
+
+
 organize()
 removing()
-reducing("0", 0, 1)
-reducing("192.168.", 0, 8)
-reducing("192.168", 0, 7)
-reducing("8.8.8.8", 0, 24)
-reducing("10.", 0, 3)
-reducing("10", 0, 2)
-reducing("172.16.", 0, 7)
-reducing("172.16", 0, 6)
+letsdoit()
 
 
-        
-for i in latest:
-    print(i)
+
+
+
+
+
+
+
 
 print("                         ")
 print("                         ")
