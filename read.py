@@ -23,8 +23,7 @@ def removing():
         if z not in latest:
             latest.append(z)
           
-def letsdoit():
-    
+def letsdoit():    
     for i in latest:
         ipe = IP(i)
         if ipe.iptype() == "PUBLIC":
