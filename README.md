@@ -1,5 +1,5 @@
 # Logscan
-Building a script to Scan logs from embedded devices looking for IP addresses, that they may be connecting to.
+Building a script to Scan logs from embedded devices looking for IP addresses, that they might be connecting to.
 
 ## Requirements:
 1- Install any Python distribution from: https://www.python.org/downloads/
