@@ -7,7 +7,6 @@ from IPy import IP
 access_token = input('Enter your token access:  ')
 handler = ipinfo.getHandler(access_token)
 
-
 list = ["0"]
 orderedlist = []
 latest = []
@@ -36,12 +35,6 @@ def letsdoit():
                companies = "--NO DATA--"
             print("IP Address=> " + i + "; Country=> " + details.country_name + "; Region=> " + details.region + "; Company=> " + companies)
 
-
-
-
-
-
-
 with open('log.txt') as f:
     for line in f:
         ip = re.findall( r'[1-2]{0,1}[0-9]{0,1}[0-9]{1}\.[1-2]{0,1}[0-9]{0,1}[0-9]{1}\.[1-2]{0,1}[0-9]{0,1}[0-9]{1}\.[1-2]{0,1}[0-9]{0,1}[0-9]{1}', line)
@@ -50,22 +43,9 @@ with open('log.txt') as f:
                 if not ip in list:
                     list.append(ip)
 
-        
-
-
-
 organize()
 removing()
 letsdoit()
-
-
-
-
-
-
-
-
-
 
 print("                         ")
 print("                         ")
