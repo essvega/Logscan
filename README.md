@@ -6,12 +6,17 @@ Building a script to Scan logs from embedded devices looking for IP addresses, t
 
 
 ## To Execute:
-1. Put your txt file with the name "log.txt" and file "read.py", both in the same folder. Then execute read.py through the Console (At        this time)
-2. Later, locate your file using your Terminal and execute:
+1. Create a new folder and add there all files to be inspected
+2. Change all your files extensions to .txt
+3. Save "read.py" into your new folder with all .txt files. 
+4. Install Python, create a new Virtual Environment as described at: https://github.com/essvega/Python-Virtual-Environment/blob/master/Virtual%20Environment.md and install all packages described in requirements.txt
+5. Activate your Virtual Environment 
+6. Later, locate your file using your Terminal and execute:
          ***python read.py***
 
 ### To Do:  
-  * Show all these API addresses in a well conformed Front-end.
+  * Show all these API addresses in a well conformed GUI with their descriptions.
+  * Convert .py file in an executable .exe
 
 
 ### Done: 
