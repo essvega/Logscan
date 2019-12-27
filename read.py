@@ -52,6 +52,11 @@ for file in os.listdir(dir_path):
         print(dirname)
         print("-"*100)
         print("-"*100)
+        print(" "*100)
+        print(" "*100)
+        print(" "*100)
+        print(" "*100)
+        
         openfor()
         organize()
         removing()
