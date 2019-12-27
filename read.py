@@ -1,4 +1,5 @@
 import re
+import os
 import requests
 import json
 import ipinfo
@@ -34,17 +35,27 @@ def letsdoit():
                companies = "--NO DATA--"
             print("IP Address=> " + i + "; Country=> " + details.country_name + "; Region=> " + details.region + "; Company=> " + companies)
 
-with open('log.txt') as f:
-    for line in f:
-        ip = re.findall( r'[1-2]{0,1}[0-9]{0,1}[0-9]{1}\.[1-2]{0,1}[0-9]{0,1}[0-9]{1}\.[1-2]{0,1}[0-9]{0,1}[0-9]{1}\.[1-2]{0,1}[0-9]{0,1}[0-9]{1}', line)
-        if len(ip) > 0 :
-            for a in list:
-                if not ip in list:
-                    list.append(ip)
+def openfor():
+    with open(dirname + '.txt') as f:
+        for line in f:
+            ip = re.findall( r'[1-2]{0,1}[0-9]{0,1}[0-9]{1}\.[1-2]{0,1}[0-9]{0,1}[0-9]{1}\.[1-2]{0,1}[0-9]{0,1}[0-9]{1}\.[1-2]{0,1}[0-9]{0,1}[0-9]{1}', line)
+            if len(ip) > 0 :
+                for a in list:
+                    if not ip in list:
+                        list.append(ip)
 
-organize()
-removing()
-letsdoit()
+dir_path = os.path.dirname(os.path.realpath(__file__))
+for file in os.listdir(dir_path):
+    if file.endswith(".txt"):
+        dirname = os.path.splitext(file)[0]
+        print("*"*100)
+        print(dirname)
+        print("-"*100)
+        print("-"*100)
+        openfor()
+        organize()
+        removing()
+        letsdoit()
 
 print("                         ")
 print("                         ")
@@ -53,3 +64,5 @@ print("*                       *")
 print("* Powered by @Essiel V. *")
 print("*                       *")
 print("*************************")
+
+
