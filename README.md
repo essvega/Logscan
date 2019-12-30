@@ -16,6 +16,8 @@ It will open every single .txt file located in the same folder as read.py
          ***python read.py***
 
 
+Note: Folder "assets" has .txt file if you want to try it first
+
 [![ODACT](https://github.com/essvega/Logscan/blob/master/assets/scan.png)](https://www.onedayact.com)
 
 
