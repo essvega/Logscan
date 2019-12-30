@@ -15,6 +15,14 @@ It will open every single .txt file located in the same folder as read.py
 6. Later, locate your file using your Terminal and execute:
          ***python read.py***
 
+
+[![ODACT](https://github.com/essvega/Logscan/blob/master/assets/scan.png)](https://www.onedayact.com)
+
+
+
+
+
+
 ### To Do:  
   * Show all these API addresses in a well conformed GUI with their descriptions.
   * Convert .py file in an executable .exe
