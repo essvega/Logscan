@@ -1,5 +1,6 @@
 # Logscan
 Building a script to Scan logs from embedded devices looking for IP addresses, that they might be connecting to.
+It will open every single .txt file located in the same folder as read.py
 
 ## Requirements:
 1- Install any Python distribution from: https://www.python.org/downloads/
