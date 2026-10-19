@@ -1,0 +1,5 @@
+# Example watch list for `logscan --watch @examples/watchlist.txt`.
+# One address or CIDR per line; text after '#' is ignored.
+132.163.96.0/22   # NIST time servers (the sample log's NTP traffic)
+198.51.100.0/24   # documentation range, never legitimate in real logs
+2001:db8::/32     # IPv6 documentation range

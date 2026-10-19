@@ -1,0 +1,73 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "logscan"
+dynamic = ["version"]
+description = "Find, classify and enrich the IP addresses hidden in log files."
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [{ name = "Essiel Vega" }]
+keywords = ["logs", "ip", "ipv6", "security", "forensics", "iot", "embedded", "geolocation", "threat-hunting"]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Environment :: Console",
+  "Intended Audience :: Information Technology",
+  "Intended Audience :: System Administrators",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Topic :: Security",
+  "Topic :: System :: Logging",
+  "Topic :: System :: Networking :: Monitoring",
+  "Typing :: Typed",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7", "pytest-cov>=4", "ruff>=0.5", "mypy>=1.8"]
+
+[project.scripts]
+logscan = "logscan.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/essvega/Logscan"
+Issues = "https://github.com/essvega/Logscan/issues"
+
+[tool.setuptools.dynamic]
+version = { attr = "logscan.__version__" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+logscan = ["py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q --doctest-modules --import-mode=importlib"
+pythonpath = ["src"]
+
+[tool.coverage.run]
+source = ["logscan"]
+branch = true
+
+[tool.ruff]
+line-length = 120
+target-version = "py39"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "S", "SIM", "RUF"]
+ignore = ["S101", "S310", "UP045", "UP006", "UP007", "UP035", "RUF001", "RUF002", "RUF003"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S", "B"]
+"src/logscan/html_report.py" = ["E501"]
+
+[tool.mypy]
+python_version = "3.10"
+files = ["src/logscan"]
+ignore_missing_imports = true
+warn_unused_ignores = true
